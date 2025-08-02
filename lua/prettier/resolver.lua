@@ -18,8 +18,8 @@ local function resolve_executable(file_dir, cwd)
     return nil
 end
 
-function M.resolve_cli_path_for_current_buffer()
-    local file = vim.api.nvim_buf_get_name(0)
+function M.resolve_cli_path_for_buffer(bufnr)
+    local file = vim.api.nvim_buf_get_name(bufnr)
     if file == "" then
         return nil
     end
